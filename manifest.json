@@ -1,0 +1,31 @@
+{
+    "manifest_version": 2,
+    "name": "Paster",
+    "description": "If u lazy u can use it",
+    "version": "1",
+    "author": "Aleksandr Asimov",
+    "icons": {
+        "256": "icon.png"
+    },
+    "content_scripts": [
+        {
+            "matches": [
+                "*://*/*"
+            ],
+            "js": [
+                "script.js"
+            ]
+        }
+    ],
+    "background": [
+        "script.js"
+    ],
+    "browser_action": {
+        "default_icon": "icon.png",
+        "default_title": "I know u want use me",
+        "default_popup": "popup.html"
+    },
+    "permissions": [
+        "https://www.linkedin.com/*/*/*/contact-info/"
+    ]
+}
