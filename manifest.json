@@ -4,29 +4,57 @@
     "description": "If u lazy u can use it",
     "version": "1",
     "author": "Aleksandr Asimov",
+    "commands": {
+        "toggle-pin": {
+            "suggested_key": {
+                "default": "Alt+Shift+P"
+            },
+            "description": "Toggle tab pin"
+        },
+        "toggle-spin": {
+            "suggested_key": {
+                "default": "Alt+Shift+O"
+            },
+            "description": "Toggle tab pin"
+        },
+        "_execute_browser_action": {
+            "suggested_key": {
+                "windows": "Ctrl+Shift+Y",
+                "mac": "Command+Shift+Y",
+                "chromeos": "Ctrl+Shift+U",
+                "linux": "Ctrl+Shift+J"
+            }
+        },
+        "_execute_page_action": {
+            "suggested_key": {
+                "default": "Ctrl+Shift+E",
+                "windows": "Alt+Shift+P",
+                "mac": "Alt+Shift+P"
+            }
+        }
+    },
     "icons": {
         "256": "icon.png"
     },
-    "content_scripts": [
-        {
-            "matches": [
-                "https://www.linkedin.com/*/*/*/contact-info/"
-            ],
-            "js": [
-                "script.js"
-            ]
-        }
-    ],
-    "background": [
-        "script.js"
-    ],
+    "content_scripts": [{
+        "matches": [
+            "https://www.linkedin.com/*/*/*/contact-info/"
+        ],
+        "js": [
+            "script.js"
+        ]
+    }],
+    "background": {
+        "persistent": false,
+        "scripts": ["background.js", "script.js"]
+    },
     "browser_action": {
         "default_icon": "icon.png",
         "default_title": "I know u want use me",
         "default_popup": "popup.html"
     },
     "permissions": [
-        "https://www.linkedin.com/*/*/*/contact-info/",
-        "storage"
+        "https://*/*/*",
+        "storage", "tabs"
     ]
 }
