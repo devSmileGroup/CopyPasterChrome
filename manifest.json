@@ -43,6 +43,13 @@
         "js": [
             "script.js"
         ]
+    }, {
+        "matches": [
+            "https://www.facebook.com/*"
+        ],
+        "js": [
+            "facebook.js"
+        ]
     }],
     "background": {
         "persistent": false,
@@ -53,8 +60,11 @@
         "default_title": "I know u want use me",
         "default_popup": "popup.html"
     },
+    "web_accessible_resources": [
+        "facebook.js"
+    ],
     "permissions": [
         "https://*/*/*",
-        "storage", "tabs"
+        "storage", "tabs", "activeTab"
     ]
 }
