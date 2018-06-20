@@ -1,5 +1,6 @@
 var person = {
-    name: '',
+    fname: '',
+    sname: '',
     post: '',
     country: '',
     jobs: [{
@@ -37,7 +38,7 @@ var person = {
 
 
 addEventListener("keydown", event => {
-    if (event.key == "q" && event.altKey) {
+    if (event.key == "4") {
         try {
             // scrollEnd();
             /////click  skill section
@@ -51,8 +52,11 @@ addEventListener("keydown", event => {
             try {
                 document.getElementsByClassName("pv-accomplishments-block__expand")[0].click()
             } catch (err) {}
-
-            person.name = document.getElementsByClassName("pv-top-card-section__name")[0].outerText
+            var name = "";
+            name = document.getElementsByClassName("pv-top-card-section__name")[0].outerText
+            var mane = name.split(" ")
+            person.fname = mane[0]
+            person.sname = mane[1]
             person.post = document.getElementsByClassName("pv-top-card-section__headline")[0].outerText
             person.country = document.getElementsByClassName("pv-top-card-section__location")[0].outerText
             try {
@@ -96,7 +100,7 @@ addEventListener("keydown", event => {
                 linkedinfo: person
             }, function () {
                 console.log(person)
-                alert('Person ' + person.name + ' save!');
+                alert('Person ' + person.fname + person.sname + ' save!');
             });
         } catch {
             alert("Please reload user page or send me this user page link")

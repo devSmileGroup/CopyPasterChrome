@@ -9,7 +9,7 @@ var contact = {
 
 
 addEventListener("keydown", event => {
-    if (event.key == "q" && event.altKey) {
+    if (event.key == "4") {
         try {
             contact.profile = document.getElementsByClassName("ci-vanity-url")[0].children[2].children[0].innerText
             if (document.getElementsByClassName("ci-email").length != 0) {
